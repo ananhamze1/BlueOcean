@@ -3,25 +3,7 @@ pipeline {
   stages {
     stage('first') {
       steps {
-        echo '1'
-      }
-    }
-
-    stage('second') {
-      steps {
-        echo '2'
-      }
-    }
-
-    stage('third') {
-      steps {
-        echo '3'
-      }
-    }
-
-    stage('fourth') {
-      steps {
-        echo '4'
+        sh 'docker run -d -p 9090:8080 --name=tom1 tomcat'
       }
     }
 
