@@ -7,6 +7,7 @@ pipeline {
           sh 'exit 1'
         }
 
+        sh 'echo $STAGE_NAME'
       }
     }
 
