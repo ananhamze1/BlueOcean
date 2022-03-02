@@ -3,7 +3,16 @@ pipeline {
   stages {
     stage('first') {
       steps {
-        sh 'docker run -d -p 9090:8080 --name=tom1 tomcat'
+        catchError(buildResult: 'success', message: '123') {
+          sh 'exit 1'
+        }
+
+      }
+    }
+
+    stage('123') {
+      steps {
+        echo '123'
       }
     }
 
