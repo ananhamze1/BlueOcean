@@ -8,17 +8,17 @@ pipeline {
         }
 
         script {
-          FAILED_STAGE="success"
+          STAGE=$STAGE_RESULT
+          echo '1'
         }
 
-        sh 'echo $STAGE_NAME'
       }
     }
 
     stage('123') {
       steps {
         echo '123'
-        echo "$FAILED_STAGE"
+        echo "$STAGE"
       }
     }
 
