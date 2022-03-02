@@ -8,7 +8,7 @@ pipeline {
         }
 
         script {
-          FAILED_STAGE=env.STAGE_RESULT
+          FAILED_STAGE=success
         }
 
         sh 'echo $STAGE_NAME'
