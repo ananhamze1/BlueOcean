@@ -8,7 +8,7 @@ pipeline {
         }
 
         script {
-          FAILED_STAGE=success
+          FAILED_STAGE="success"
         }
 
         sh 'echo $STAGE_NAME'
