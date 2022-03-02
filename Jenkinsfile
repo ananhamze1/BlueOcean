@@ -8,7 +8,7 @@ pipeline {
         }
 
         script {
-          STAGE=$STAGE_RESULT
+          STAGE="$STAGE_RESULT"
           echo '1'
         }
 
