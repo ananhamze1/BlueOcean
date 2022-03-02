@@ -3,13 +3,18 @@ pipeline {
   stages {
     stage('first') {
       steps {
+        script {
+          STAGE="failure"
+          echo '1'
+        }
+
         catchError(buildResult: 'success', message: '123', stageResult: 'failure') {
           sh 'exit 1'
         }
 
         script {
-          STAGE="$STAGE_RESULT"
-          echo '1'
+          STAGE="success"
+          echo '2'
         }
 
       }
@@ -17,7 +22,7 @@ pipeline {
 
     stage('123') {
       steps {
-        echo '123'
+        echo '3'
         echo "$STAGE"
       }
     }
