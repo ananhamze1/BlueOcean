@@ -7,6 +7,10 @@ pipeline {
           sh 'exit 1'
         }
 
+        script {
+          FAILED_STAGE=env.STAGE_NAME
+        }
+
         sh 'echo $STAGE_NAME'
       }
     }
@@ -14,6 +18,7 @@ pipeline {
     stage('123') {
       steps {
         echo '123'
+        echo "$FAILED_STAGE"
       }
     }
 
