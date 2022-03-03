@@ -9,7 +9,7 @@ pipeline {
         }
 
         catchError(buildResult: 'success', message: '123', stageResult: 'failure', catchInterruptions: true) {
-          build 'test/master'
+          build 'test'
           script {
             STAGE="success"
             echo '2'
