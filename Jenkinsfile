@@ -4,7 +4,6 @@ pipeline {
     stage('123') {
       steps {
         echo '3'
-        echo bbb
       }
     }
 
