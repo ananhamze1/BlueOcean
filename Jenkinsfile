@@ -1,9 +1,21 @@
 pipeline {
   agent any
   stages {
-    stage('123') {
+    stage('1') {
       steps {
         echo '3'
+      }
+    }
+
+    stage('2') {
+      steps {
+        sh 'exit 1'
+      }
+    }
+
+    stage('3') {
+      steps {
+        echo 'a'
       }
     }
 
