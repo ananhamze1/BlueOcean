@@ -9,8 +9,9 @@ pipeline {
 
     stage('2') {
       steps {
-        catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
-          sh '''su ctuser -c "echo 1"
+        catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+          sh '''su root -c "echo 1"
+
 '''
         }
 
