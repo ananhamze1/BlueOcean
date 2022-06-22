@@ -10,7 +10,7 @@ pipeline {
     stage('2') {
       steps {
         catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-          sh '''su root -c "echo 1"
+          sh '''su -c "echo 1"
 
 '''
         }
