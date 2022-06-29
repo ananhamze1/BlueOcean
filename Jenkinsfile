@@ -29,6 +29,17 @@ pipeline {
     http_proxy = 'http://PITC-Zscaler-EMEA-Amsterdam3PR.proxy.corporate.gdn.ge.com:80/'
     https_proxy = 'http://PITC-Zscaler-EMEA-Amsterdam3PR.proxy.corporate.gdn.ge.com:80/'
   }
+  post {
+    always {
+      script {
+        emailext body: "${currentBuild.result},",
+        to: "rawad.khalaila@ge.com",
+        subject: "${currentBuild.result} NGC Jenkins Build"
+      }
+
+    }
+
+  }
   parameters {
     string(name: 'branch', defaultValue: 'release-ngc-m3', description: 'git branch')
   }
