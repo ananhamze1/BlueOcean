@@ -14,15 +14,4 @@ pipeline {
     }
 
   }
-  post {
-    always {
-      script {
-        emailext body: "${currentBuild.result}",
-        to: "rawad.khalaila@ge.com",
-        subject: "${currentBuild.result} NGC Jenkins Build"
-      }
-
-    }
-
-  }
 }
