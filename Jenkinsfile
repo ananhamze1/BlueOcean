@@ -9,17 +9,8 @@ pipeline {
 
     stage('3') {
       steps {
-        echo '2'
+        echo "${env.BUILD_NUMBER}"
       }
-    }
-
-  }
-  post {
-    always {
-      script {
-        echo ${env.BUILD_NUMBER}
-      }
-
     }
 
   }
