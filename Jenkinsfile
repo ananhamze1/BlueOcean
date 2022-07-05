@@ -9,7 +9,7 @@ pipeline {
 
     stage('3') {
       steps {
-        sh 'echo "${BUILD_USER}"'
+        echo '${BUILD_USER}'
       }
     }
 
