@@ -11,4 +11,7 @@ pipeline {
     }
 
   }
+  options {
+    skipDefaultCheckout()
+  }
 }
