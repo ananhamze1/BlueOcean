@@ -1,15 +1,12 @@
 pipeline {
   agent any
   stages {
-    stage('1') {
+    stage('build user') {
       steps {
-        echo '3'
-      }
-    }
+        wrap(delegate: [$class: 'BuildUser']) {
+          sh 'echo "${BUILD_USER}"'
+        }
 
-    stage('3') {
-      steps {
-        sh 'echo "${BUILD_USER_FIRST_NAME} 123"'
       }
     }
 
