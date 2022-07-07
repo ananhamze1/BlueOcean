@@ -9,7 +9,7 @@ export TABLE=1'''
           TABLE = 'cat html'
         }
 
-        echo '$TABLE'
+        sh 'echo $TABLE'
       }
     }
 
