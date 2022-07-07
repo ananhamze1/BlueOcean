@@ -1,11 +1,14 @@
 pipeline {
   agent any
   stages {
-    stage('error') {
+    stage('Create RPMs and ISO') {
       steps {
         sh '''cd /home/shr_mibuilder/Desktop
-setnev TABLE 1
-$TABLE=`cat table`'''
+setenv TABLE 1'''
+        script {
+          TABLE = '2'
+        }
+
       }
     }
 
