@@ -6,7 +6,7 @@ pipeline {
         sh '''cd /home/shr_mibuilder/Desktop
 export TABLE=1'''
         script {
-          TABLE = '2'
+          TABLE = 'cat html'
         }
 
       }
