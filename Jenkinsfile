@@ -3,11 +3,8 @@ pipeline {
   stages {
     stage('s') {
       steps {
-        script {
-          cd /home/shr_mibuilder/Desktop
-          cat table
-        }
-
+        sh '''cd /home/shr_mibuilder/Desktop
+export TABLE=\'cat table\''''
       }
     }
 
