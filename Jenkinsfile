@@ -3,13 +3,14 @@ pipeline {
   stages {
     stage('Create RPMs and ISO') {
       steps {
-        sh '''cd /home/shr_mibuilder/Desktop
-export TABLE=1'''
         script {
+          cd /home/shr_mibuilder/Desktop
+          cat table
+          export TABLE=1
           TABLE = 'cat html'
+          echo $TABLE
         }
 
-        sh 'echo $TABLE'
       }
     }
 
