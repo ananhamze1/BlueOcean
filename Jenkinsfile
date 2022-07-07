@@ -4,7 +4,8 @@ pipeline {
     stage('s') {
       steps {
         sh '''cd /home/shr_mibuilder/Desktop
-export TABLE=\'cat table\''''
+export TABLE=\'cat table\'
+echo $TABLE'''
       }
     }
 
