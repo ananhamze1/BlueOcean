@@ -1,9 +1,11 @@
 pipeline {
   agent any
   stages {
-    stage('') {
+    stage('error') {
       steps {
-        sh 'echo "${BUILD_USER}"'
+        sh '''cd /home/shr_mibuilder/Desktop
+setnev TABLE 1
+$TABLE=`cat table`'''
       }
     }
 
