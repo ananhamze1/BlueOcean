@@ -4,16 +4,16 @@ pipeline {
     stage('s') {
       post {
         success {
-          sh 'echo 1'
+          sh 'echo 2'
         }
 
         failure {
-          sh 'echo 2'
+          sh 'echo 1'
         }
 
       }
       steps {
-        sh 'echo 1'
+        sh 'exit 1'
       }
     }
 
