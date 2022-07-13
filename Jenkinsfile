@@ -3,8 +3,12 @@ pipeline {
   stages {
     stage('s') {
       post {
-        always {
-          sh 'echo $stageResult'
+        success {
+          sh 'echo 1'
+        }
+
+        failure {
+          sh 'echo 2'
         }
 
       }
