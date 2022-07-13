@@ -9,7 +9,7 @@ pipeline {
 
       }
       steps {
-        sh 'echo $stageResult'
+        sh 'echo 1'
       }
     }
 
