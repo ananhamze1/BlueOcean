@@ -58,18 +58,17 @@ pipeline {
     }
 
     stage('Update_Version') {
-      steps {
-        post() {
-          success() {
-            sh 'echo "$STAGE_NAME: PASS --" >> /home/shr_mibuilder/Desktop/html/stages.txt'
-          }
-
-          failure() {
-            sh 'echo "$STAGE_NAME: FAIL DevOps_Team_To_Investigate" >> /home/shr_mibuilder/Desktop/html/stages.txt'
-          }
-
+      post {
+        success {
+          sh 'echo "$STAGE_NAME: PASS --" >> /home/shr_mibuilder/Desktop/html/stages.txt'
         }
 
+        failure {
+          sh 'echo "$STAGE_NAME: FAIL DevOps_Team_To_Investigate" >> /home/shr_mibuilder/Desktop/html/stages.txt'
+        }
+
+      }
+      steps {
         script {
           UPDATE_VERSION = '<b><font color=red>FAIL</font></b>'
           UPDATE_VERSION_OWNER = '<b><font color=black>DevOps Team To Investigate</font></b>'
@@ -84,18 +83,17 @@ pipeline {
     }
 
     stage('Build_CPP') {
-      steps {
-        post() {
-          success() {
-            sh 'echo "$STAGE_NAME: PASS --" >> /home/shr_mibuilder/Desktop/html/stages.txt'
-          }
-
-          failure() {
-            sh 'echo "$STAGE_NAME: FAIL DevOps_Team_To_Investigate" >> /home/shr_mibuilder/Desktop/html/stages.txt'
-          }
-
+      post {
+        success {
+          sh 'echo "$STAGE_NAME: PASS --" >> /home/shr_mibuilder/Desktop/html/stages.txt'
         }
 
+        failure {
+          sh 'echo "$STAGE_NAME: FAIL DevOps_Team_To_Investigate" >> /home/shr_mibuilder/Desktop/html/stages.txt'
+        }
+
+      }
+      steps {
         script {
           BUILD_CPP = '<b><font color=red>FAIL</font></b>'
           Build_CPP_OWNER = '<b><font color=black>SmartConsole Team To Investigate</font></b>'
