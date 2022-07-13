@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('s') {
       steps {
-        sh 'echo $STAGE_NAME'
+        sh 'echo $stageResult'
       }
     }
 
