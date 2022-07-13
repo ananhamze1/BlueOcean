@@ -1,10 +1,5 @@
 pipeline {
-  agent {
-    node {
-      label 'SmartConsole_SLES_Builder'
-    }
-
-  }
+  agent any
   stages {
     stage('Clone_SmartConsole ') {
       parallel {
