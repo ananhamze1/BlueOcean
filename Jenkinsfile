@@ -295,10 +295,28 @@ pipeline {
     stage('Deployment') {
       parallel {
         stage('Deploy_Artifacts ') {
+          post {
+            success {
+              sh 'echo "$STAGE_NAME: PASS --" >> /home/shr_mibuilder/Desktop/html/stages.txt'
+            }
+
+            failure {
+              sh 'echo "$STAGE_NAME: FAIL SmartConsole_Team_To_Investigate" >> /home/shr_mibuilder/Desktop/html/stages.txt'
+            }
+
+          }
           steps {
             script {
               DEPLOY_ARTIFACTS = '<b><font color=red>FAIL</font></b>'
               DEPLOY_ARTIFACTS_OWNER = '<b><font color=black>DevOps Team To Investigate</font></b>'
+            }
+
+            script {
+              sh'''
+cd /home/shr_mibuilder/Desktop/html
+generate.sh < stages.txt > table.txt
+
+'''
             }
 
             script {
@@ -345,7 +363,6 @@ pipeline {
       script {
         sh'''
 cd /home/shr_mibuilder/Desktop/html
-generate.sh < stages.txt > table.txt
 
 '''
       }
