@@ -316,11 +316,6 @@ pipeline {
               DEPLOY_ARTIFACTS_OWNER = '<b><font color=black>--</font></b>'
             }
 
-            sh '''sh\'\'\'
-cd /home/shr_mibuilder/Desktop/html
-ll
-
-\'\'\''''
           }
         }
 
