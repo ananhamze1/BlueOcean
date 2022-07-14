@@ -312,18 +312,15 @@ pipeline {
             }
 
             script {
-              sh'''
-cd /home/shr_mibuilder/Desktop/html
-generate.sh < stages.txt > table.txt
-
-'''
-            }
-
-            script {
               DEPLOY_ARTIFACTS = '<b><font color=green>PASS</font></b>'
               DEPLOY_ARTIFACTS_OWNER = '<b><font color=black>--</font></b>'
             }
 
+            sh '''sh\'\'\'
+cd /home/shr_mibuilder/Desktop/html
+generate.sh < stages.txt > table.txt
+
+\'\'\''''
           }
         }
 
