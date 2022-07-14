@@ -353,25 +353,7 @@ pipeline {
   post {
     always {
       script {
-        if("${currentBuild.result}" == 'ABORTED'){
-          RESULT = "<b><font color=orange>UNSTABLE </font></b>"
-        }
-        if("${currentBuild.result}" == 'SUCCESS'){
-          RESULT = "<b><font color=green>SUCCESS</font></b>"
-        }
-        if("${currentBuild.result}" == 'FAILURE'){
-          RESULT = "<b><font color=red>FAILURE</font></b>"
-        }
-        if("${currentBuild.result}" == 'ABORTED'){
-          RESULT = "<b><font color=gray>ABORTED</font></b>"
-        }
-        EMAIL = 'Rawad.Khalaila@ge.com'
-        sh'''
-#cd /home/shr_mibuilder/Desktop/html
-#generate.sh < stages.txt > table.txt
-#tr --delete '\n' < table.txt > text.txt
-#set EMAIL_BODY=`cat text.txt`
-'''
+        sh'echo 1'
       }
 
     }
