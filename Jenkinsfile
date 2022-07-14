@@ -353,7 +353,9 @@ pipeline {
   post {
     always {
       script {
-        sh'echo 1'
+        sh'''
+cd /home/shr_mibuilder/Desktop/html
+'''
       }
 
     }
