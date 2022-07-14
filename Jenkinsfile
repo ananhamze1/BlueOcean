@@ -369,13 +369,9 @@ pipeline {
         sh'''
 cd /home/shr_mibuilder/Desktop/html
 generate.sh < stages.txt > table.txt
-set EMAIL_BODY=`cat table.txt`
+tr --delete '\n' < table.txt > text.txt
+set EMAIL_BODY=`cat text.txt`
 '''
-        wrap([$class: 'BuildUser']) {
-          emailext body: "<table style='width:35%'><p style='font-size:16px;'><tr><td>Project:</td><td>SmartConsole SLES</td></tr><tr><td>OS:</td><td>SLES</td></tr><tr><td>Build Number:<td>${env.BUILD_NUMBER}</td></tr><tr><td>Started by:<td>${BUILD_USER}</td></tr><tr><td>Build Status:</td><td>$RESULT</td></tr></p></table>  $EMAIL_BODY  <br><br><p style='font-size:16px;'>Build report: http://10.135.193.70:8080/blue/organizations/jenkins/SmartConsole1%2FSmartConsole_SLES_Build/detail/main/${env.BUILD_NUMBER}/pipeline</p> ",
-          to: "$EMAIL",
-          subject: "${currentBuild.result} SmartConsole SLES Jenkins Build"
-        }
       }
 
     }
