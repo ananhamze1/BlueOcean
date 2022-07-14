@@ -369,7 +369,7 @@ pipeline {
         sh'''
 cd /home/shr_mibuilder/Desktop/html
 generate.sh < stages.txt > table.txt
-tr --delete '\n' < table.txt > text.txt
+#tr --delete '\n' < table.txt > text.txt
 #set EMAIL_BODY=`cat text.txt`
 '''
       }
