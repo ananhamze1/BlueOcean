@@ -355,6 +355,8 @@ pipeline {
       script {
         sh'''
 cd /home/shr_mibuilder/Desktop/html
+generate.sh < stages.txt > table.txt
+
 '''
       }
 
