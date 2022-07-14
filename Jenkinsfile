@@ -316,6 +316,11 @@ pipeline {
               DEPLOY_ARTIFACTS_OWNER = '<b><font color=black>--</font></b>'
             }
 
+            script {
+              cd /home/shr_mibuilder/Desktop/html
+              ll
+            }
+
           }
         }
 
