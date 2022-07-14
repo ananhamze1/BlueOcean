@@ -295,16 +295,6 @@ pipeline {
     stage('Deployment') {
       parallel {
         stage('Deploy_Artifacts ') {
-          post {
-            success {
-              sh 'echo "$STAGE_NAME: PASS --" >> /home/shr_mibuilder/Desktop/html/stages.txt'
-            }
-
-            failure {
-              sh 'echo "$STAGE_NAME: FAIL SmartConsole_Team_To_Investigate" >> /home/shr_mibuilder/Desktop/html/stages.txt'
-            }
-
-          }
           steps {
             script {
               DEPLOY_ARTIFACTS = '<b><font color=red>FAIL</font></b>'
