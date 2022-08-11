@@ -1,12 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('Clone') {
+    stage('ss') {
       steps {
-        dir(path: '$TEMP_DIR') {
-          git(url: 'git@gitlab-gxp.cloud.health.ge.com:NMSW/nuca_falcon.git', branch: 'staging')
-        }
-
+        sh 'git clone --branch staging git@gitlab-gxp.cloud.health.ge.com:NMSW/nuca_falcon.git'
       }
     }
 
