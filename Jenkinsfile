@@ -4,7 +4,7 @@ pipeline {
     stage('Clone') {
       steps {
         dir(path: '$TEMP_DIR') {
-          git(url: 'git@gitlab-gxp.cloud.health.ge.com:MI-DEVOPS/NGC.git', branch: 'devops')
+          git(url: 'git@gitlab-gxp.cloud.health.ge.com:NMSW/nuca_falcon.git', branch: 'staging')
         }
 
       }
