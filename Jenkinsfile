@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Clone') {
       steps {
-        dir(path: '/home/shr_mibuilder/Desktop/') {
+        dir(path: '/home/shr_mibuilder/Desktop') {
           git(url: 'git@gitlab-gxp.cloud.health.ge.com:NMSW/nuca_falcon.git', branch: 'staging')
         }
 
