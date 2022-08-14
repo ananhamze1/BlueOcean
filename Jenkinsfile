@@ -12,6 +12,6 @@ pipeline {
 
   }
   environment {
-    TEMP_DIR = '/home/shr_mibuilder/Desktop/equivalence'
+    TEMP_DIR = '/home/shr_mibuilder/Desktop/'
   }
 }
