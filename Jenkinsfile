@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Clone') {
       steps {
-        sh 'date'
+        sh 'date -d "$Tandem_Unified_SLES:00:00" +%s'
         sh '''if [ $NGC -gt 21 ]
 then
 echo "11"
