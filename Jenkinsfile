@@ -3,10 +3,12 @@ pipeline {
   stages {
     stage('Clone') {
       steps {
-        dir(path: '/home/shr_mibuilder/Desktop') {
-          git(url: 'git@gitlab-gxp.cloud.health.ge.com:NMSW/nuca_falcon.git', branch: 'staging')
-        }
+        sh '''export current_epoch=$(date +%s.%N)
+export target_epoch=$(date -d "18:08:08.12345" +%s.%N)
 
+export sleep_seconds=$(echo "$target_epoch - $current_epoch"|bc)
+
+sleep $sleep_seconds'''
       }
     }
 
