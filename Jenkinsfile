@@ -24,7 +24,7 @@ export target_epoch=$(date -d "18:00:00" +%s)
 export sleep_seconds=$(echo "$target_epoch - $current_epoch"|bc)
 
 echo $sleep_seconds'''
-        sh '''if [ $NGC-gt 21 ]
+        sh '''if [ $NGC -gt 21 ]
 then
 echo "11"
 else
