@@ -4,7 +4,7 @@ pipeline {
     stage('Clone') {
       steps {
         sh 'date -d "$Tandem_Unified_SLES:00:00" +%s'
-        sh '''if [ $NGC -gt 21 ]
+        sh '''if [\' 5.3 -gt 85 \']
 then
 echo "11"
 else
