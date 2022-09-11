@@ -3,8 +3,7 @@ pipeline {
   stages {
     stage('Clone') {
       steps {
-        sh 'date -d "$Tandem_Unified_SLES:00:00" +%s'
-        sh '''if [\' 5.3 -gt 85 \']
+        sh '''if [ -d "/home/shr_mibuilder/Desktop"]
 then
 echo "11"
 else
