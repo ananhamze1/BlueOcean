@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Clone') {
       steps {
-        sh '''if [ -d "/home/shr_mibuilder/Desktop"]
+        sh '''if [ -d  /home/shr_mibuilder/Desktop ]
 then
 echo "11"
 else
