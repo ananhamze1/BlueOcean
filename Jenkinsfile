@@ -3,8 +3,17 @@ pipeline {
   stages {
     stage('Clone') {
       steps {
-        sh 'exit 1'
-        sh 'echo !!!!!!!!!'
+        catchError(buildResult: 'success', stageResult: 'success') {
+          sh 'exit 1'
+          sh 'echo !!!!!!!!!'
+        }
+
+      }
+    }
+
+    stage('') {
+      steps {
+        echo '124'
       }
     }
 
