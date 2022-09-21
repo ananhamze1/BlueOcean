@@ -3,12 +3,8 @@ pipeline {
   stages {
     stage('Clone') {
       steps {
-        sh '''if [ -d  /home/shr_mibuilder/Desktop ]
-then
-echo "11"
-else
-echo "22"
-fi'''
+        sh 'exit 1'
+        sh 'echo !!!!!!!!!'
       }
     }
 
