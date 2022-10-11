@@ -11,9 +11,11 @@ pipeline {
       }
     }
 
-    stage('') {
+    stage('error') {
       steps {
-        echo '124'
+        sh '''
+          export d=/home/ctuser/scut/backend/target/
+        '''
       }
     }
 
