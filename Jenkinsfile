@@ -7,7 +7,7 @@ pipeline {
           sh '''
 
             echo $version
-            regex="([0-9]+).([0-9]+).([0-9]+)"
+            regex="([0-]+).([0-]+).([0-]+)"
             if [[ $version =~ $regex ]]; then
               echo $version
               major="${BASH_REMATCH[1]}"
