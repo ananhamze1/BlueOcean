@@ -10,6 +10,13 @@ pipeline {
             fi
 
             echo $version
+
+            regex="([0-9]+).([0-9]+).([0-9]+)"
+            if [[ $version =~ $regex ]]; then
+              major="${BASH_REMATCH[1]}"
+              minor="${BASH_REMATCH[2]}"
+              build="${BASH_REMATCH[3]}"
+            fi
           '''
         }
 
