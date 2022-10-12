@@ -26,6 +26,6 @@ pipeline {
   }
   parameters {
     string(name: 'scut_branch', defaultValue: 'master', description: 'branch for SCUT git sources')
-    string(name: 'version', defaultValue: '', description: 'version')
+    string(name: 'version', defaultValue: '0.0.1', description: 'version')
   }
 }
