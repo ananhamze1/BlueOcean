@@ -17,6 +17,9 @@ pipeline {
               minor="${BASH_REMATCH[2]}"
               build="${BASH_REMATCH[3]}"
             fi
+            minor=$(echo $minor + 1 | bc)
+            build=$(echo $build + 1 | bc)
+            major=$(echo $major + 1 | bc)
           '''
         }
 
