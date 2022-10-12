@@ -5,8 +5,12 @@ pipeline {
       steps {
         catchError(buildResult: 'success', stageResult: 'success') {
           sh '''
-            export version=0.0.2
-            echo $version'''
+            if [ $version== "" ]; then
+                export version=0.0.2
+            fi
+
+            echo $version
+          '''
         }
 
       }
