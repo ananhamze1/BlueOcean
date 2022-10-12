@@ -4,7 +4,9 @@ pipeline {
     stage('Clone') {
       steps {
         catchError(buildResult: 'success', stageResult: 'success') {
-          sh 'echo $version'
+          sh '''
+            export version=0.0.2
+            echo $version'''
         }
 
       }
