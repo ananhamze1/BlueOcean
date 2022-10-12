@@ -8,13 +8,12 @@ pipeline {
 
            echo $version
             regex="([0-9]+).([0-9]+).([0-9]+)"
-            if [[ $version =~ $regex ]]; then
-              major="${BASH_REMATCH[1]}"
-              minor="${BASH_REMATCH[2]}"
-              build="${BASH_REMATCH[3]}"
-              build=$(echo $build + 1 | bc)
+            if [![ $version =~ $regex ]]; then
+              
+              version=$(cat /home/shr_mibuilder/Desktop/c.txt)
             fi
-            export version=${major}.${minor}.${build}
+            
+
             echo $version
           '''
         }
