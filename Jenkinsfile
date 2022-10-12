@@ -6,15 +6,21 @@ pipeline {
         catchError(buildResult: 'success', stageResult: 'success') {
           sh '''
 
-           echo $version
+            echo $version
             regex="([0-9]+).([0-9]+).([0-9]+)"
-            if [![ $version =~ $regex ]]; then
-              
+            if [[ $version =~ $regex ]]; then
+              echo $version
+            else
               version=$(cat /home/shr_mibuilder/Desktop/c.txt)
             fi
+            major="${BASH_REMATCH[1]}"
+            minor="${BASH_REMATCH[2]}"
+            build="${BASH_REMATCH[3]}"
+            build=$(echo $build + 1 | bc)
+            export next_version=${major}.${minor}.${build}
             
-
-            echo $version
+            echo $next_version > /home/shr_mibuilder/Desktop/c.txt
+            echo $next_version
           '''
         }
 
