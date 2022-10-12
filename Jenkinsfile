@@ -13,9 +13,9 @@ pipeline {
             else
               version=$(cat /home/shr_mibuilder/Desktop/c.txt)
             fi
-            major="${BASH_REMATCH[1]}"
-            minor="${BASH_REMATCH[2]}"
-            build="${BASH_REMATCH[3]}"
+            major="${version[1]}"
+            minor="${version[2]}"
+            build="${version[3]}"
             build=$(echo $build + 1 | bc)
             export next_version=${major}.${minor}.${build}
             
