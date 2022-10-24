@@ -3,7 +3,13 @@ pipeline {
   stages {
     stage('Clone') {
       steps {
-        sh 'exit 0'
+        sh '''
+         echo $?
+           if [ $? -nq 0 ] then
+              exit 1
+            fi
+
+          '''
       }
     }
 
