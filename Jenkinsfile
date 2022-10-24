@@ -5,7 +5,8 @@ pipeline {
       steps {
         sh '''
          echo $?
-           if [ $? -nq 0 ] then
+           if [ $? -nq 0 ] 
+           then
               exit 1
             fi
 
